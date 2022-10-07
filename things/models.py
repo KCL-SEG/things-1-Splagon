@@ -1,6 +1,6 @@
 from django.db import models
-from django.core.validators import MinLengthValidator
-from django.core.validators import MaxLengthValidator
+from django.core.validators import MinValueValidator
+from django.core.validators import MaxValueValidator
 
 class Thing(models.Model):
     name = models.CharField(
@@ -17,7 +17,7 @@ class Thing(models.Model):
         unique = False,
         default = 0,
         validators = [
-            MinLengthValidator(0, message = "Quantity must be 0 or above"),
-            MaxLengthValidator(100, message = "Quantity must be 100 or below")
+            MinValueValidator(0, message = "Quantity must be 0 or above"),
+            MaxValueValidator(100, message = "Quantity must be 100 or below")
         ]
     )
