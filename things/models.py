@@ -1,3 +1,7 @@
 from django.db import models
+from django.contrib.models.Model
 
-# Create your models here.
+class Thing(Model):
+    name = models.CharField()
+    description = models.CharField()
+    quanitity = models.IntegerField()
